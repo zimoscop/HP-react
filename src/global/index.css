@@ -132,14 +132,17 @@ p {
   height: 192px;
   width: 334px;
   overflow: hidden;
+  position: relative;
   background-color: gray;
 }
 
 img {
   width: 100%;
   height: auto;
-  position: relative;
   bottom: 50%;
+  position: absolute;
+  top: -1%;
+  left: -0.1%;
 }
 
 .footer {
@@ -162,6 +165,37 @@ img {
   width: 55px;
   padding: 5px;
   cursor: pointer;
+}
+
+.like {
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  top: 10px;
+  left: 270px;
+  border-radius: 50%;
+  background-color: rgb(249, 249, 250);
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  background-image: url("../components/image/Group\ 1\ like.svg");
+  background-position: center top -26px;
+}
+
+.notlike {
+  z-index: 5;
+  display: block;
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  top: 10px;
+  left: 270px;
+  border-radius: 50%;
+  background-color: rgb(249, 249, 250);
+  border: none;
+  cursor: pointer;
+  background-image: url("../components/image/Group 1-not.svg");
+  background-position: center top -26px;
 }
 
 @media (max-width: 800px) {
