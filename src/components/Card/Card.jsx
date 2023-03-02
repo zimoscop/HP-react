@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-// import like from "../components/image/Group 1 like";
-// import notlike from "../components/image/Group 1-not";
 
 export const Card = (props) => {
   const { id, name, actor, gender, wand, house, image, alive } = props;
@@ -17,6 +15,7 @@ export const Card = (props) => {
         {name} - foto not found
         <img src={image} alt="" />
         <button
+          data-id={active ? "like" : "notlike"}
           data-name={name}
           onClick={handleClick}
           className={active ? "like " : "notlike"}

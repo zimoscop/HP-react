@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Cards } from "../Cards/Cards";
 import { Search } from "../Search/Search";
 import { SearchSchool } from "../SearchSchool/SearchSchool";
+import { ShowLiked } from "../ShowLiked/ShowLiked";
 
 export const Main = () => {
   const [cards, setCards] = useState([]);
+  const [count, setCount] = useState(0);
 
   const searchCards = (search) => {
     fetch(`https://hp-api.onrender.com/api/characters`)
@@ -55,6 +57,7 @@ export const Main = () => {
             <Search searchCards={searchCards} />
             <SearchSchool searchSchool={searchSchool} />
             <Cards cards={cards} />
+            <ShowLiked count={count} />
           </div>
         </div>
       </section>
