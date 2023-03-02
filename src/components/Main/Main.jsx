@@ -24,7 +24,6 @@ export const Main = () => {
         count: 1,
       };
       setLikes([...likes, newItem]);
-      console.log(newItem);
     } else {
       const newLikes = likes.map((likesItem, index) => {
         if (index === itemIndex) {

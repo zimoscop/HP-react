@@ -7,7 +7,9 @@ import { Link } from "react-router-dom";
 export const Home = () => {
   return (
     <div>
-      <Link to="/favorite">to favorite</Link>
+      <div>
+        <Link to="/favorite">to favorite</Link>
+      </div>
       <Header />
       <Main />
       <Footer />
