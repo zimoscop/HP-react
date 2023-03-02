@@ -249,21 +249,20 @@ img {
 }
 
 .likes_page {
+  width: 335px;
+}
+
+.flex {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 10px 10px;
 }
 
 .likes_cross {
   cursor: pointer;
   text-decoration: underline;
 }
-
-/* .likes-item {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-} */
 
 .likes_text {
   margin-bottom: 30px;
