@@ -6,7 +6,37 @@ import { ShowLiked } from "../ShowLiked/ShowLiked";
 
 export const Main = () => {
   const [cards, setCards] = useState([]);
-  const [count, setCount] = useState(0);
+  const [likes, setLikes] = useState([]);
+
+  const likedCollector = (item) => {
+    const newItem = {
+      ...item,
+      count: 1,
+    };
+    setLikes([...likes, newItem]);
+
+    const itemIndex = likes.findIndex((likesItem) => likesItem.id === item.id);
+    if (itemIndex < 0) {
+      const newItem = {
+        ...item,
+        count: 1,
+      };
+      setLikes([...likes, newItem]);
+      console.log(newItem);
+    } else {
+      const newLikes = likes.map((likesItem, index) => {
+        if (index === itemIndex) {
+          return {
+            ...likesItem,
+            count: likesItem.count + 1,
+          };
+        } else {
+          return likesItem;
+        }
+      });
+      setLikes(newLikes);
+    }
+  };
 
   const searchCards = (search) => {
     fetch(`https://hp-api.onrender.com/api/characters`)
@@ -56,8 +86,8 @@ export const Main = () => {
           <div className="container">
             <Search searchCards={searchCards} />
             <SearchSchool searchSchool={searchSchool} />
-            <Cards cards={cards} />
-            <ShowLiked count={count} />
+            <Cards cards={cards} likedCollector={likedCollector} />
+            <ShowLiked count={likes.length} />
           </div>
         </div>
       </section>
