@@ -191,6 +191,7 @@ img {
   border-radius: 48px;
   cursor: pointer;
   background-color: white;
+  z-index: 30;
 }
 
 .btn_symbol {
@@ -230,6 +231,42 @@ img {
   cursor: pointer;
   background-image: url("../components/image/Group 1-not.svg");
   background-position: center top -26px;
+}
+
+.likes_pages {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #d4d3d8;
+  /* max-width: 90%; */
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  z-index: 25;
+  padding: 10px;
+}
+
+.likes_page {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.likes_cross {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* .likes-item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+} */
+
+.likes_text {
+  margin-bottom: 30px;
 }
 
 @media (max-width: 800px) {

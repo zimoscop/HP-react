@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Cards } from "../Cards/Cards";
+import { LikesPage } from "../LikesPage/LikesPage";
 import { Search } from "../Search/Search";
 import { SearchSchool } from "../SearchSchool/SearchSchool";
 import { ShowLiked } from "../ShowLiked/ShowLiked";
@@ -7,6 +8,7 @@ import { ShowLiked } from "../ShowLiked/ShowLiked";
 export const Main = () => {
   const [cards, setCards] = useState([]);
   const [likes, setLikes] = useState([]);
+  const [isLIkesVis, setIsLIkesVis] = useState(false);
 
   const likedCollector = (item) => {
     const newItem = {
@@ -36,6 +38,10 @@ export const Main = () => {
       });
       setLikes(newLikes);
     }
+  };
+
+  const handleLikesVis = () => {
+    setIsLIkesVis(!isLIkesVis);
   };
 
   const searchCards = (search) => {
@@ -87,7 +93,10 @@ export const Main = () => {
             <Search searchCards={searchCards} />
             <SearchSchool searchSchool={searchSchool} />
             <Cards cards={cards} likedCollector={likedCollector} />
-            <ShowLiked count={likes.length} />
+            <ShowLiked count={likes.length} handleLikesVis={handleLikesVis} />
+            {isLIkesVis && (
+              <LikesPage likes={likes} handleLikesVis={handleLikesVis} />
+            )}
           </div>
         </div>
       </section>

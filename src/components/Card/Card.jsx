@@ -20,7 +20,7 @@ export const Card = (props) => {
           data-name={name}
           onClick={() => {
             handleClick();
-            likedCollector({ id, name });
+            likedCollector({ id, name, image });
           }}
           className={active ? "like " : "notlike"}
         ></button>
